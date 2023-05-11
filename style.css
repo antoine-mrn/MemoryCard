@@ -12,3 +12,25 @@ body {
   background: linear-gradient(to right, #d17608, #ec3503);
   padding: clamp(20px, 5vw, 50px) 20px 10px;
 }
+
+.global-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: green;
+  padding: 10px;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+h1 {
+  font-family: Raleway, sans-serif, Arial;
+  font-weight: 300;
+}
+
+h1 span {
+  font-weight: 700;
+}
+
+img {
+  width: 50px;
+}

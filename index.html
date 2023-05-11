@@ -5,12 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory game</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <main>
+      <div class="global-container">
+        <h1>Jeu des <span>cartes mémoires</span></h1>
 
+        <p class="game-description">
+          Retrouver les paires de cartes et tenter de gagner avec le moins
+          d'essais possible
+        </p>
+
+        <p class="result">Nombre de coups: <span class="round">0</span></p>
+
+        <div class="game-container">
+          <div class="card">
+            <div class="front-card">
+              <img src="./ressources/question.svg" alt="interrogation logo" />
+            </div>
+            <div class="back-card">
+              <img src="./ressources/apple.svg" alt="apple" />
+            </div>
+            <div class="card">
+              <div class="front-card">
+                <img src="./ressources/question.svg" alt="interrogation logo" />
+              </div>
+              <div class="back-card">
+                <img src="./ressources/apple.svg" alt="apple" />
+              </div>
+          </div>
+          <div class="card">
+            <div class="front-card">
+              <img src="./ressources/question.svg" alt="interrogation logo" />
+            </div>
+            <div class="back-card">
+              <img src="./ressources/apple.svg" alt="apple" />
+            </div>
+            <div class="card">
+              <div class="front-card">
+                <img src="./ressources/question.svg" alt="interrogation logo" />
+              </div>
+              <div class="back-card">
+                <img src="./ressources/apple.svg" alt="apple" />
+              </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script src="app.js"></script>
   </body>
