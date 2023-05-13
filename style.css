@@ -31,6 +31,48 @@ h1 span {
   font-weight: 700;
 }
 
+.game-container {
+  display: flex;
+  gap: 15px;
+}
+
+.card-wrapper {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  perspective: 1000px;
+  perspective-origin: top;
+}
+
+.card-wrapper:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.3s linear;
+}
+
+.front-card,
+.back-card {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #c7c7c7;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.back-card {
+  transform: rotateY(180deg);
+}
+
 img {
-  width: 50px;
+  width: 125px;
 }
