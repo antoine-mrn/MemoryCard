@@ -32,8 +32,12 @@ h1 span {
 }
 
 .game-container {
-  display: flex;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(3, 150px);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  justify-content: center;
 }
 
 .card-wrapper {
@@ -42,6 +46,7 @@ h1 span {
   width: 150px;
   perspective: 1000px;
   perspective-origin: top;
+  cursor: pointer;
 }
 
 .card-wrapper:hover .card {
