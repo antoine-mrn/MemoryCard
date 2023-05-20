@@ -35,25 +35,28 @@ function pickCards(e) {
         lockReturn = true
         compareCards(cardPicked)
     }
-
 }
+
+const roundCount = document.querySelector(".round")
+console.log(roundCount)
 
 let nbRound = 0
 let result = 0
 
 function compareCards(cards) {
     nbRound++
+    roundCount.textContent = nbRound
 
     if(cards[0].image === cards[1].image) {
         cards.forEach(card => card.target.removeEventListener("click", pickCards))
         result++
+        lockReturn = false
     }
     else {
         setTimeout(() => {
             cards.forEach(card => card.target.classList.remove("rotate"))
             lockReturn = false
         }, 1000);
-
     }
     cardPicked = []
 }
