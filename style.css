@@ -49,9 +49,9 @@ h1 span {
   cursor: pointer;
 }
 
-.card-wrapper:hover .card {
+/* .card-wrapper:hover .card {
   transform: rotateY(180deg);
-}
+} */
 
 .card {
   position: relative;
@@ -61,8 +61,13 @@ h1 span {
   transition: transform 0.3s linear;
 }
 
+.card.rotate {
+  transform: rotateY(180deg);
+}
+
 .front-card,
 .back-card {
+  pointer-events: none;
   position: absolute;
   display: flex;
   justify-content: center;

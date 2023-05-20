@@ -11,11 +11,25 @@ function fisherYatesShuffle(arr){
 }
 
 const allCards = document.querySelectorAll(".card")
+console.dir(allCards)
 
 function initGame() {
     for(let i = 0; i < imagesShuffle.length; i++) {
         allCards[i].children[1].children[0].src = `./ressources/${imagesShuffle[i]}.svg`
-        allCards[i].children[1].children[0].alt = `${imagesShuffle[i]} image`
+        allCards[i].children[1].children[0].alt = `${imagesShuffle[i]}`
+    }
+}
+
+allCards.forEach(card => card.addEventListener("click", pickCards))
+
+let cardPicked = []
+
+function pickCards(e) {
+    e.target.classList.add("rotate")
+    cardPicked.push({target: e.target, image: e.target.children[1].children[0].alt})
+
+    if(cardPicked.length === 2) {
+        compareCards()
     }
 }
 
