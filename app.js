@@ -38,7 +38,6 @@ function pickCards(e) {
 }
 
 const roundCount = document.querySelector(".round")
-console.log(roundCount)
 
 let nbRound = 0
 let result = 0
@@ -46,6 +45,7 @@ let result = 0
 function compareCards(cards) {
     nbRound++
     roundCount.textContent = nbRound
+    console.log(cards)
 
     if(cards[0].image === cards[1].image) {
         cards.forEach(card => card.target.removeEventListener("click", pickCards))
@@ -59,6 +59,30 @@ function compareCards(cards) {
         }, 1000);
     }
     cardPicked = []
+
+    roundFinished()
+}
+
+const gameDescription = document.querySelector(".game-description")
+
+function roundFinished() {
+    if(result === imagesShuffle.length/2) {
+        gameDescription.textContent = "Bravo ! Tu as trouvé toutes les paires"
+        gameDescription.style.fontWeight = "700"
+    }
+}
+
+document.addEventListener("keydown", restartGame)
+
+function restartGame(e) {
+    if(e.keyCode === 32){
+        nbRound = 0
+        roundCount.textContent = nbRound
+        gameDescription.textContent = "Retrouver les paires de cartes et tenter de gagner avec le moins d'essais possible"
+        allCards.forEach(card => card.classList.remove("rotate"))
+        allCards.forEach(card => card.addEventListener("click", pickCards))
+        fisherYatesShuffle(imagesArray)
+    }
 }
 
 initGame()
