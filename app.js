@@ -1,4 +1,4 @@
-const imagesArray = ["apple", "banana", "brocoli", "cherry", "pepper", "straw", "apple", "banana", "brocoli", "cherry", "pepper", "straw"]
+const imagesArray = ["bandit", "dark_prince", "giant", "pekka", "skeletons", "valkyrie", "bandit", "dark_prince", "giant", "pekka", "skeletons", "valkyrie"]
 
 imagesShuffle = fisherYatesShuffle(imagesArray)
 console.log(imagesShuffle)
@@ -15,7 +15,7 @@ const allCards = document.querySelectorAll(".card")
 
 function initGame() {
     for(let i = 0; i < imagesShuffle.length; i++) {
-        allCards[i].children[1].children[0].src = `./ressources/${imagesShuffle[i]}.svg`
+        allCards[i].children[1].children[0].src = `./ressources/${imagesShuffle[i]}.png`
         allCards[i].children[1].children[0].alt = `${imagesShuffle[i]}`
         allCards[i].setAttribute("data-attr", imagesShuffle[i])
     }
