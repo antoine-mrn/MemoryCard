@@ -17,6 +17,7 @@ function initGame() {
     for(let i = 0; i < imagesShuffle.length; i++) {
         allCards[i].children[1].children[0].src = `./ressources/${imagesShuffle[i]}.svg`
         allCards[i].children[1].children[0].alt = `${imagesShuffle[i]}`
+        allCards[i].setAttribute("data-attr", imagesShuffle[i])
     }
 }
 
@@ -26,15 +27,12 @@ let cardPicked = []
 let lockReturn = false
 
 function pickCards(e) {
-    if(lockReturn) return
+    if(lockReturn || e.target === cardPicked[0]?.target) return
 
-    cardPicked.push({target: e.target, image: e.target.children[1].children[0].alt})
+    cardPicked.push({target: e.target, image: e.target.dataset.attr})
     e.target.classList.add("rotate")
 
-    if(cardPicked.length === 2 && !lockReturn) {
-        lockReturn = true
-        compareCards(cardPicked)
-    }
+    if(cardPicked.length === 2) compareCards(cardPicked)
 }
 
 const roundCount = document.querySelector(".round")
@@ -43,9 +41,10 @@ let nbRound = 0
 let result = 0
 
 function compareCards(cards) {
+    lockReturn = true
     nbRound++
+
     roundCount.textContent = nbRound
-    console.log(cards)
 
     if(cards[0].image === cards[1].image) {
         cards.forEach(card => card.target.removeEventListener("click", pickCards))
