@@ -9,14 +9,18 @@
 body {
   min-height: 100vh;
   font-family: lato, Helvetica, sans-serif;
-  background: linear-gradient(to right, #d17608, #ec3503);
+  /* background: linear-gradient(to right, #d17608, #ec3503); */
+  background: linear-gradient(
+    45deg,
+    rgba(159, 156, 215, 1) 0%,
+    rgba(67, 70, 99, 1) 45%
+  );
   padding: clamp(20px, 5vw, 50px) 20px 10px;
 }
 
 .global-container {
   max-width: 900px;
   margin: 0 auto;
-  background-color: green;
   padding: 10px;
   color: #f1f1f1;
   text-align: center;
@@ -25,10 +29,21 @@ body {
 h1 {
   font-family: Raleway, sans-serif, Arial;
   font-weight: 300;
+  font-size: 3em;
 }
 
 h1 span {
   font-weight: 700;
+}
+
+.game-description {
+  margin-top: 25px;
+  font-size: 1.1em;
+}
+
+.result {
+  font-size: 1.1em;
+  margin: 15px;
 }
 
 .game-container {
@@ -38,6 +53,7 @@ h1 span {
   grid-column-gap: 15px;
   grid-row-gap: 15px;
   justify-content: center;
+  align-items: center;
 }
 
 .card-wrapper {
@@ -48,10 +64,6 @@ h1 span {
   perspective-origin: top;
   cursor: pointer;
 }
-
-/* .card-wrapper:hover .card {
-  transform: rotateY(180deg);
-} */
 
 .card {
   position: relative;
@@ -74,7 +86,7 @@ h1 span {
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: #c7c7c7;
+  background-color: #f1f1f1;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -84,5 +96,20 @@ h1 span {
 }
 
 img {
-  width: 125px;
+  width: 85%;
+}
+
+@media screen and (max-width: 665px) {
+  .game-container {
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+
+  .card-wrapper {
+    position: relative;
+    height: 100px;
+    width: 100px;
+  }
 }

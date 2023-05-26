@@ -66,7 +66,7 @@ const gameDescription = document.querySelector(".game-description")
 
 function roundFinished() {
     if(result === imagesShuffle.length/2) {
-        gameDescription.textContent = "Bravo ! Tu as trouvé toutes les paires"
+        gameDescription.textContent = `Bravo ! Tu as trouvé toutes les paires. Appuies sur la barre "espace" pour relancer une partie`
         gameDescription.style.fontWeight = "700"
     }
 }
