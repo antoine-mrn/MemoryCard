@@ -108,8 +108,21 @@ img {
   }
 
   .card-wrapper {
-    position: relative;
     height: 100px;
     width: 100px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .game-container {
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: repeat(3, 75px);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+
+  .card-wrapper {
+    height: 75px;
+    width: 75px;
   }
 }
